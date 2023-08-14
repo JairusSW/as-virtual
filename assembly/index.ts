@@ -64,4 +64,9 @@ export class Virtual<T> {
         // @ts-ignore: __new is defined
         __free(changetype<usize>(this));
     }
+
+    static createEmpty<T>(): Virtual<nonnull<T>> {
+        // @ts-ignore: __new is defined
+        return changetype<Virtual<nonnull<T>>>(__new(offsetof<Virtual<nonnull<T>>>(), idof<Virtual<nonnull<T>>>()));
+    }
 }
