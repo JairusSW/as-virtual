@@ -10,6 +10,7 @@ export class Virtual<T> {
         if (!end) {
             if (isString<nonnull<T>>()) {
                 this.length = (<string>data).length - start;
+                this.end = (<string>data).length;
             }
         } else {
             this.length = end - start;
