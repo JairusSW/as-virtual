@@ -17,10 +17,15 @@ npm install as-virtual
 ```js
 import { Virtual } from "as-virtual/assembly";
 
-const virt = new Virtual<string>("Hello World!", 6);
+const virt = new Virtual<string>("hello world!", 6);
 // Virt represents "Hello World!".slice(6)
 
-console.log(`virt == "world!": ${virt.equals("world!")}`);
-console.log(`virt == "yo-yo!": ${virt.equals("yo-yo!")}`);
-console.log(virt.copyOut());
+virt.equals("world!"); // true
+virt.equals("yo-yo!"); // false
+
+// Reinstantiate Virtual with new data
+virt.reinst("Hello yo-yo!", 6);
+virt.equals("yo-yo!"); // true
+
+console.log(virt.copyOut()); // "yo-yo!"
 ```

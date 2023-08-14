@@ -7,6 +7,17 @@ export class Virtual<T> {
     private data_ptr: usize;
 
     constructor(public data: T, public start: i32 = 0, public end: i32 = 0) {
+        this.reinst(data, start, end);
+    }
+
+    /**
+     * Reinstantiate Virtual<T> with new data. Does not create a new Virtual.
+     * @param data data
+     * @param start start
+     * @param end end
+     */
+    reinst(data: T, start: i32 = 0, end: i32 = 0): void {
+        this.data = data;
         if (!end) {
             if (isString<nonnull<T>>()) {
                 this.length = (<string>data).length - start;
@@ -24,7 +35,6 @@ export class Virtual<T> {
         this.data_ptr = changetype<usize>(data) + (<usize>(start << i32(align)));
         this.byteLength = this.length << i32(align);
     }
-
     /**
      * Test for equality between two elements.
      * Strict comparison meaning, can only compare type T to type T.
