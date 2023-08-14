@@ -4,13 +4,9 @@ A virtual type implementation that serves as a representation of a segment of da
 
 ### Inspiration
 
-When creating a JSON parser, I ran into the issue of constantly using `.slice()` which allocated a new string and copied data to it. The constant allocation caused massive memory bloat and a significant loss to performance. I wondered if I could instead create a type that can represent a section of data without the bloat.
-
-### Installation
-
-```
-npm install as-virtual
-```
+While working on a JSON parser, I constantly used `.slice()`, which resulted in new string allocations and unnecessary data copying. This frequent allocation led to significant memory bloat and performance degradation.
+I began to explore whether it was possible to create a specialized type that could represent a data segment without causing these issues and came up with Virtual Types.
+By utilizing this approach, I managed to increase the performance of JSON parsing, specifically for a Vector 3, boosting operations from `8,159,838m ops` to an impressive `39,260,740m ops`. The results are wild.
 
 ### Usage
 
@@ -29,8 +25,3 @@ virt.equals("yo-yo!"); // true
 
 console.log(virt.copyOut()); // "yo-yo!"
 ```
-
-### Performance
-
-I used Virtual instead of string.slice and parsing a Vec3 jumped from 9m ops to 33m ops.
-Wild. If you use it correctly, you may achieve the same results.
