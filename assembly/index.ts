@@ -12,7 +12,7 @@ export class Virtual<T> {
                 this.length = (<string>data).length - start;
             }
         } else {
-            this.length = start - end;
+            this.length = end - start;
         }
 
         if (this.length <= 0) {
