@@ -1,6 +1,6 @@
 {
     "name": "as-virtual",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Virtual and reflective data structures for AssemblyScript",
     "types": "assembly/index.ts",
     "author": "Jairus Tanaka",
