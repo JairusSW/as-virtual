@@ -17,9 +17,7 @@
         "assemblyscript": "^0.27.8",
         "typescript": "^5.1.6"
     },
-    "dependencies": {
-        "as-variant": "^0.4.1"
-    },
+    "dependencies": {},
     "repository": {
         "type": "git",
         "url": "git+https://github.com/JairusSW/as-virtual.git"
