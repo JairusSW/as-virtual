@@ -1,16 +1,10 @@
 {
-    "name": "json-as",
-    "version": "0.5.54",
-    "description": "JSON encoder/decoder for AssemblyScript",
+    "name": "as-virtual",
+    "version": "0.1.0",
+    "description": "Virtual and reflective data structures for AssemblyScript",
     "types": "assembly/index.ts",
     "author": "Jairus Tanaka",
-    "contributors": [
-        "DogWhich",
-        "Romdotdog",
-        "Derek Barrera",
-        "Frankk Taylor",
-        "lekiano"
-    ],
+    "contributors": [],
     "license": "MIT",
     "scripts": {
         "build:test": "asc assembly/test.ts --target test",
