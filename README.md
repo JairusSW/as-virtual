@@ -29,3 +29,8 @@ virt.equals("yo-yo!"); // true
 
 console.log(virt.copyOut()); // "yo-yo!"
 ```
+
+### Performance
+
+I used Virtual instead of string.slice and parsing a Vec3 jumped from 9m ops to 33m ops.
+Wild. If you use it correctly, you may achieve the same results.
