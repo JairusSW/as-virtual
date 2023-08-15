@@ -1,8 +1,11 @@
 import { Virtual } from ".";
 
 const virt = Virtual.createEmpty<string>();
-// Reinstantiate Virtual with new data
-virt.reinst("Hello yo-yo!", 6);
-console.log(`virt == "yo-yo!": ${virt.equals("yo-yo!")}`);
-
+virt.reinst("hello!")
+console.log(`Exists: ${virt.exists()}`);
+const virt2 = new Virtual<string>(" mum!");
 console.log(virt.copyOut());
+
+console.log(virt.merge(virt2));
+
+console.log(Virtual.mergeVirts<string>([virt, virt2]))
