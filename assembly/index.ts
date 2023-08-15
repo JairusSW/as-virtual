@@ -3,7 +3,7 @@
  */
 export class Virtual<T> {
     private data: usize = 0;
-
+    public end: i32 = 0;
     public length: i32 = 0;
     public offset: i32 = 0;
     private data_ptr: usize;
@@ -20,6 +20,7 @@ export class Virtual<T> {
      */
     reinst(data: nonnull<T>, start: i32 = 0, end: i32 = 0): void {
         this.offset = start;
+        this.end = end;
         /*if (!this.exists()) {
             // Claim new data
             // @ts-ignore: __pin is defined
