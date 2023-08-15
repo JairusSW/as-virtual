@@ -25,3 +25,25 @@ virt.equals("yo-yo!"); // true
 
 console.log(virt.copyOut()); // "yo-yo!"
 ```
+
+### API
+
+`new Virtual<T>(data: T, start: i32, end: i32)` - Create a new Virtual instance
+
+`Virtual.createEmpty<T>(): Virtual<T>` - Create a Virtual that is not attached to parent data
+
+`Virtual.mergeVirts<T>(items: Virtual<T>[]): T` - Merge multiple Virtuals into one instance of T
+
+`reinst(data: T, start: i32, end: i32): void` - Assign new parent data to the Virtual without re-allocating
+
+`equals(eq: T): boolean` - Test for equality between Virtual and provided data
+
+`copyOut(): T` - Copy the data segment and return it as T. Result is detached from parent data.
+
+`merge(item: Virtual<T>): T` - Merge current Virtual with another Virtual.
+
+`exists(): boolean` - Check if parent data exists. Should be checked after using `Virtual.createEmpty`.
+
+`destroy(): void` - Destroy the Virtual. Will be freed from memory and cannot be used or referenced again without error.
+
+`clear(): void` - Clear the parent data from memory and destroy the Virtual.
