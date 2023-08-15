@@ -20,7 +20,7 @@ export class Virtual<T> {
      */
     reinst(data: nonnull<T>, start: i32 = 0, end: i32 = 0): void {
         this.offset = start;
-        if (!this.exists()) {
+        /*if (!this.exists()) {
             // Claim new data
             // @ts-ignore: __pin is defined
             __pin(changetype<usize>(data));
@@ -32,7 +32,7 @@ export class Virtual<T> {
             // Claim new data
             // @ts-ignore: __pin is defined
             __pin(changetype<usize>(data));
-        }
+        }*/
         this.data = changetype<usize>(data);
         if (!end) {
             if (isString<nonnull<T>>()) {
@@ -95,9 +95,6 @@ export class Virtual<T> {
      * If the said Virtual<T> is accessed after `destroy()` is called, it will result in a `abort: in ~lib/rt/tlsf.ts` error.
      */
     destroy(): void {
-        // Release old data
-        // @ts-ignore: __unpin is defined
-        if (this.exists()) __unpin(this.data);
         // @ts-ignore: __new is defined
         __free(changetype<usize>(this));
     }
