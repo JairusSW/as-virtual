@@ -57,6 +57,8 @@ export class Virtual<T> {
      * @returns boolean
      */
     equals(eq: T): boolean {
+        // @ts-ignore
+        if (isString<T>() && this.length != (eq.length << 1)) return false;
         if (this.length == 2) {
             return load<u16>(this.data_ptr) == load<u16>(changetype<usize>(eq))
         }
